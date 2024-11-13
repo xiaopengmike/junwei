@@ -80,6 +80,7 @@ def update_data(data_path,calendar):
     return a
 
 def price_df_load(a,calendar_list,api=None):
+    a['断板日期']=a['断板日期'].astype(str)
     calendar_list=list(set(calendar_list).union(set(a['断板日期'])))
     calendar_list.sort()
     a_groups=a.groupby('断板日期')
