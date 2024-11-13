@@ -243,10 +243,12 @@ if __name__ == '__main__':
         print(f"文件 '{file_name}' 存在,说明数据文件存在，仅更新最新的数据")
         a=update_data(file_name,calendar_path)
         a.to_excel(file_name, index=False) 
-        print('初始数据已保存')   
+        print('更新后的数据已保存')   
     else:
         print(f"文件 '{file_name}' 不存在,从头开始获取数据,第一个参数请填写你希望的开始时间")
         a=get_popular_stock('20240801', calendar_list)
+        a.to_excel(file_name, index=False)
+        print('初始数据已保存')
     
     print('-'*80)
     print('下载日线数据中...')
