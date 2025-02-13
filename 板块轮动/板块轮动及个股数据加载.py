@@ -97,7 +97,7 @@ if __name__ == '__main__':
     for i in tqdm(date_list):
         #run_at_time('20250128190500',120)
 
-        query=f'{i}板块热度降序 {i}板块热度大于10万 指数代码886开头'
+        query=f'{i}板块热度降序 {i}板块热度大于{hot}万 指数代码886开头'
         print(query)
         df=pywencai.get(query=query, perpage=100, sort_order='asc', query_type='zhishu', loop=False,no_detail=True)#user_agent='Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36 SLBrowser/9.0.5.12181 SLBChan/25 SLBVPV/64-bit')
         tem=process_single_concept(df,i,query)
